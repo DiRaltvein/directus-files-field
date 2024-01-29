@@ -1,0 +1,32 @@
+{
+  "name": "files_field_change",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "start": "npx directus start",
+    "configure": "npx directus bootstrap && npm run apply-snapshot",
+    "dev": "nodemon --watch . --ignore ./dist --ext js,ts,tsx,json,vue --exec \"npm run build && npm run start\"",
+    "apply-snapshot": "npx directus schema apply -y ./migrations/snapshot.yaml",
+    "create-snapshot": "npx directus schema snapshot -y ./migrations/snapshot.yaml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "sass": "^1.70.0",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "directus": "^10.8.3",
+    "pg": "^8.11.3"
+  },
+  "workspaces": [
+    "src/extensions/**/**/*"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

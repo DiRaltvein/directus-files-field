@@ -1,0 +1,27 @@
+{
+	"name": "directus-extension-storage",
+	"description": "S3 storage endpoint",
+	"icon": "extension",
+	"version": "1.0.1",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-custom-endpoint"
+	],
+	"directus:extension": {
+		"type": "endpoint",
+		"path": "../../../../dist/extensions/endpoints/storage/index.js",
+		"source": "src/index.ts",
+		"host": "10.2.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "10.2.0",
+		"@types/node": "^20.6.0",
+		"typescript": "^5.2.2"
+	}
+}
